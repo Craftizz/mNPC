@@ -1,0 +1,39 @@
+#
+#  Pages Syntax:
+#
+#  * [message] <message> - Sends a message to the player. Accepts MiniMessage syntax
+#  * [command] <command> - Makes a player execute a command
+#  * [console] <command> - Makes the console execute a command
+#  * [sound] <namespace:key> <volume> <pitch> - Plays a sound to the player
+#
+#
+#  Requirement Types:
+#  * ">" - Checks if the placeholder is greater than or equal on the requirement
+#  * "<" - Checks if the placeholder is less than or equal on the requirement
+#  * "=" - Checks if the placeholder is equal to the requirement
+#
+
+exampleNPC:
+  # What is the Id of the NPC?
+  npc-id: 1
+  # What should be checked before we allow the player to click the NPC?
+  requirements:
+    level-requirement:
+      type: ">"
+      placeholder: "%player_level%"
+      requirement: 10
+      deny-message: "<#f34723>You only have <placeholder> levels!"
+  # What should be played on the first click of the player?
+  # - Shall this be empty, it will proceed to first page of pages
+  first-click-page:
+    - "[message] This is a first page!"
+    - "[command] help"
+    - "[console] say this is a console command"
+    - "[sound] minecraft:entity.arrow.hit_player 1 1"
+  # You can configure the contents of pages here
+  # - Use the proper syntax
+  pages:
+    first-page:
+      - "[message] Hello there <player>!"
+      - "[console] say this is a console command"
+      - "[sound] minecraft:entity.arrow.hit_player 1 1"

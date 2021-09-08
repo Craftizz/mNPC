@@ -1,0 +1,7 @@
+name: mNPC
+version: ${project.version}
+main: io.github.craftizz.mnpc.MNPC
+api-version: 1.17
+authors: [ Craftizz, b01w ]
+description: Custom Plugin of Mineconomy
+depend: [ Citizens, PlaceholderAPI ]
